@@ -3,9 +3,11 @@ from behave import given, when, then
 
 COLOR_OPTIONS = (By.CSS_SELECTOR, "[class*='ButtonWrapper'] img")
 SELECTED_COLOR = (By.CSS_SELECTOR, "[class*='StyledVariationSelectorImage'] [class*='CellVariationHeaderWrapper']")
+
 @given ('Open target product page A-88345426')
 def open_product_page_88345426 (context):
     context.driver.get("https://www.target.com/p/A-88345426")
+
 
 @then ('Verify each color can be selected')
 def verify_each_color_can_be_selected (context):

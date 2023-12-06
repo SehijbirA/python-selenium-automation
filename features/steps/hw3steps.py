@@ -5,17 +5,13 @@ from time import sleep
 
 @given('Open target.com')
 def open_target(context):
-    context.driver.get('https://www.target.com/')
+    context.app.main_page.open_main()
 
 
 @when('Click on the Cart icon')
 def click_cart_icon(context):
     context.driver.find_element(By.CSS_SELECTOR, "[data-test='@web/CartLink']").click()
 
-
-@then('Verify “Your cart is empty” message is shown')
-def verify_cart_is_empty(context):
-    assert context.driver.find_element(By.XPATH, "//h1[contains(text(),'Your cart is empty')]"), "Cart is not empty"
 
 
 @when('Click Sign In')

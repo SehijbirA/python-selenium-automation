@@ -4,8 +4,8 @@ from time import sleep
 
 
 @given('Open Target Circle page')
-def open_tagert_circle(context):
-    context.driver.get('https://www.target.com/circle')
+def open_target_circle(context):
+    context.app.main_page.open_main()
 
 
 @then('Verify there are {number} Benefits boxes')
@@ -17,7 +17,7 @@ def verify_number_of_benefits_boxes(context, number):
 
 @when('Click on the Search button')
 def click_the_search_button(context):
-    context.driver.find_element(By.CSS_SELECTOR, "#searchMobile").click()
+    context.app.main_page.search("toothpaste")
 
 
 @when('Search for toothpaste')
@@ -27,10 +27,10 @@ def search_for_product(context):
     context.driver.find_element(By.CSS_SELECTOR, "button[data-test='@web/Search/SearchButton']").click()
     sleep(5)
 
+
 @when('Click on the toothpaste')
 def click_on_the_product(context):
     context.driver.find_element(By.CSS_SELECTOR, "a[aria-label='Crest Pro-Health Advanced Gum Protection Toothpaste']").click()
-
 
 
 @when('Click add to cart button')
