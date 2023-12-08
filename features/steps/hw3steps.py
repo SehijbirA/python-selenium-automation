@@ -13,18 +13,16 @@ def click_cart_icon(context):
     context.driver.find_element(By.CSS_SELECTOR, "[data-test='@web/CartLink']").click()
 
 
-
 @when('Click Sign In')
 def click_sign_in(context):
-    context.driver.find_element(By.CSS_SELECTOR, "[data-test='@web/AccountLink']").click()
+    context.app.main_page.open_sign_in_when_signed_out()
 
 
 @when('Click Sign In from navigation menu')
 def click_sign_in_form_navigation_menu(context):
-    context.driver.find_element(By.CSS_SELECTOR, "[data-test='accountNav-signIn']").click()
+    context.app.main_page.click_sign_in_form_navigation_menu()
 
 
 @then('Verify Sign In form opened')
 def verify_sign_in_form_is_open(context):
-    assert context.driver.find_element(By.CSS_SELECTOR, "#login"), "Sign in form is not open"
-
+    context.app.sign_in_page.verify_sign_in_form_is_open()

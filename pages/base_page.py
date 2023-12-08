@@ -11,6 +11,9 @@ class Page:
     def find_element(self, *locator):
         return self.driver.find_element(*locator)
 
+    def find_elements(self, *locator):
+        return self.driver.find_elements(*locator)
+
     def input(self, *locator, text):
         self.driver.find_element(*locator).send_keys(text)
 

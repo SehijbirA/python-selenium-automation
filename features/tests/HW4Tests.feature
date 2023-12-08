@@ -8,8 +8,8 @@ Feature: Target Circle, Cart, and help test cases
   Scenario: Add a product to the cart and verify it is there
     Given Open target.com
     When Search for toothpaste
-    And Click on the toothpaste
     And Click add to cart button
-    When Click on the Cart icon
+    And Click on add to cart from side bar
+    Then Click on View Cart from the sidebar
     Then Verify the item is in the cart
 
