@@ -8,7 +8,7 @@ from pages.sign_in_page import SignInPage
 class Application:
     def __init__(self, driver):
         self.search_results = SearchResults(driver)
-        self.page = Page(driver)
+        self.base_page = Page(driver)
         self.main_page = MainPage(driver)
         self.cart_page = CartPage(driver)
         self.sign_in_page = SignInPage(driver)
